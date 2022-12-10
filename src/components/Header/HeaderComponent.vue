@@ -46,11 +46,13 @@ import ArrowIcon from "@/components/icons/ArrowIcon";
 
 .header {
   $header: &;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
   width: 100%;
-  position: sticky;
-  top: 0;
+  backdrop-filter: blur(25px);
+  z-index: 9999;
 
   .container {
     display: flex;
@@ -65,8 +67,8 @@ import ArrowIcon from "@/components/icons/ArrowIcon";
       align-items: center;
       color: $white-tp-9;
       font-size: rem(22);
-      gap: rem(12);
       font-weight: 600;
+      gap: rem(12);
 
       svg {
         cursor: pointer;
@@ -108,15 +110,15 @@ import ArrowIcon from "@/components/icons/ArrowIcon";
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: rem(30);
       font-weight: 600;
+      gap: rem(30);
 
       &_login {
         width: rem(120);
         height: 100%;
-        color: $white-tp-5;
-        cursor: pointer;
         border-radius: rem(8);
+        cursor: pointer;
+        color: $white-tp-5;
         @include transition();
 
         &:hover {
@@ -126,8 +128,8 @@ import ArrowIcon from "@/components/icons/ArrowIcon";
 
       &_register {
         @extend .header__authorization_login;
-        color: white;
         background: $orange-main;
+        color: white;
 
         &:hover {
           background: $orange-main-700;
