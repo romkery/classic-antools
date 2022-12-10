@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container">
       <div class="header__logo">
-        <LogoIcon />
+        <LogoIcon role="button" tabindex="1" />
         <span>antools.</span>
       </div>
       <nav class="header__nav">
@@ -36,8 +36,8 @@
 </template>
 
 <script setup>
-import LogoIcon from "@/components/icons/logo-Icon.svg?component";
-import ArrowIcon from "@/components/icons/arrow-Icon.svg?component";
+import LogoIcon from "@/components/icons/LogoIcon";
+import ArrowIcon from "@/components/icons/ArrowIcon";
 </script>
 
 <style lang="scss" scoped>
@@ -49,6 +49,8 @@ import ArrowIcon from "@/components/icons/arrow-Icon.svg?component";
   display: flex;
   justify-content: center;
   width: 100%;
+  position: sticky;
+  top: 0;
 
   .container {
     display: flex;
