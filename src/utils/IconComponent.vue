@@ -11,14 +11,19 @@ export default {
       type: String,
       required: true,
     },
+    folder: {
+      type: String,
+      required: false,
+    },
   },
 
   computed: {
     dynamicComponent() {
-      const name = this.name.charAt(0).toUpperCase() + this.name.slice(1);
-
+      console.log(name);
       return defineAsyncComponent(() =>
-        import(`@/components/icons/${name}.vue`)
+        this.folder
+          ? import(`@/components/icons/${this.folder}/${this.name}.vue`)
+          : import(`@/components/icons/${this.name}.vue`)
       );
     },
   },
