@@ -10,11 +10,9 @@
         free Design and Development tools
       </p>
       <div class="section-hero__main_search">
-        <div class="container">
-          <SearchIcon />
-          <input type="text" placeholder="find more than 430+ tools..." />
-          <button>Search</button>
-        </div>
+        <SearchIcon />
+        <input type="text" placeholder="find more than 430+ tools..." />
+        <button>Search</button>
       </div>
       <div class="section-hero__main_socials">
         <a :href="social.slice(0, -4)" v-for="social in socials" :key="social">
@@ -86,36 +84,40 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
       height: rem(64);
       background: $background-main;
       border-radius: rem(15);
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
 
-      .container {
-        display: flex;
-        align-items: center;
-        padding: rem(8) rem(11);
-        gap: rem(15);
+      input {
+        flex-grow: 1;
+        height: 100%;
+        width: 100%;
+        border-radius: rem(15);
+        padding-left: rem(50);
+        border: rem(1) solid transparent;
 
-        input {
-          flex-grow: 1;
-
-          &:focus {
-            #{$search} {
-              border: 10px solid skyblue;
-            }
-            .container {
-              border: 1px solid skyblue;
-            }
-          }
+        &:focus {
+          border: rem(1) solid skyblue;
         }
+      }
 
-        button {
-          width: rem(130);
-          height: rem(48);
-          background: $orange-main;
-          border-radius: rem(8);
-          cursor: pointer;
-          @include transition();
-          &:hover {
-            background: $orange-main-700;
-          }
+      svg {
+        position: absolute;
+        left: rem(11);
+      }
+
+      button {
+        right: rem(11);
+        position: absolute;
+        width: rem(130);
+        height: rem(48);
+        background: $orange-main;
+        border-radius: rem(8);
+        cursor: pointer;
+        @include transition();
+        &:hover {
+          background: $orange-main-700;
         }
       }
     }
