@@ -1,5 +1,5 @@
 <template>
-  <component :is="dynamicComponent" />
+  <component :is="dynamicComponent" :props="$props" />
 </template>
 
 <script>

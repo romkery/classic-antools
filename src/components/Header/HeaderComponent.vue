@@ -60,7 +60,7 @@ import ArrowIcon from "@/components/icons/ArrowIcon";
     width: 100%;
     height: rem(48);
     max-width: rem(1224);
-    padding: rem(26) rem(20) 0 rem(20);
+    padding: rem(26) rem(20) rem(10) rem(20);
 
     #{$header}__logo {
       display: flex;

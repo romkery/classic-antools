@@ -98,7 +98,7 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
         border: rem(1) solid transparent;
 
         &:focus {
-          border: rem(1) solid skyblue;
+          border: rem(1) solid $orange-main;
         }
       }
 

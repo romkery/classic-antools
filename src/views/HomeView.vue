@@ -1,6 +1,7 @@
 <template>
   <main class="container">
     <HeroSection />
+    <ToolsSection />
   </main>
 </template>
 
@@ -17,4 +18,5 @@
 </style>
 <script setup>
 import HeroSection from "@/components/HomeSections/HeroSection.vue";
+import ToolsSection from "@/components/HomeSections/ToolsSection";
 </script>
