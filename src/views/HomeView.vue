@@ -2,6 +2,7 @@
   <main class="container">
     <HeroSection />
     <ToolsSection />
+    <BrandsSection />
   </main>
 </template>
 
@@ -19,4 +20,5 @@
 <script setup>
 import HeroSection from "@/components/HomeSections/HeroSection.vue";
 import ToolsSection from "@/components/HomeSections/ToolsSection";
+import BrandsSection from "@/components/HomeSections/BrandsSection";
 </script>

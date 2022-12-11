@@ -144,7 +144,7 @@ const setIsLiked = (index: number) => {
   &__grid {
     display: grid;
     justify-content: center;
-    grid-gap: rem(10);
+    grid-gap: rem(24);
     grid-template-columns: repeat(3, minmax(0, rem(392)));
     width: 100%;
 
