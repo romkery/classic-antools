@@ -14,7 +14,6 @@ export default defineConfig({
     svgLoader(),
     vitePluginRequire({
       fileRegex: /(.jsx?|.tsx?|.vue)$/,
-      translateType: "importMetaUrl",
       // @fileRegex RegExp
       // optional：default file processing rules are as follows
       // fileRegex:/(.jsx?|.tsx?|.vue)$/

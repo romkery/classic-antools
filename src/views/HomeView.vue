@@ -3,6 +3,7 @@
     <HeroSection />
     <ToolsSection />
     <BrandsSection />
+    <NewcomerSection />
   </main>
 </template>
 
@@ -21,4 +22,5 @@
 import HeroSection from "@/components/HomeSections/HeroSection.vue";
 import ToolsSection from "@/components/HomeSections/ToolsSection";
 import BrandsSection from "@/components/HomeSections/BrandsSection";
+import NewcomerSection from "@/components/HomeSections/NewcomerSection";
 </script>

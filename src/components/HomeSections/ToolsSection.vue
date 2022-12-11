@@ -8,33 +8,7 @@
       </p>
     </div>
     <div class="section-tools__grid">
-      <div
-        class="section-tools__card"
-        v-for="(tool, index) in toolsData"
-        :key="tool.name"
-      >
-        <div class="section-tools__card_header">
-          <img :src="tool.img" :alt="tool.name.toLowerCase() + ' logo'" />
-          <p>
-            {{ tool.name }}<br />
-            <span>{{ tool.license }}</span>
-          </p>
-        </div>
-        <div class="section-tools__card_main">
-          <p>{{ tool.description }}</p>
-        </div>
-        <div class="section-tools__card_footer">
-          <div class="section-tools__card_footer-icons">
-            <IconComponent
-              name="HeartIcon"
-              @click="setIsLiked(index)"
-              :isLiked="tool.isLiked"
-            />
-            <IconComponent name="FolderIcon" />
-          </div>
-          <button>Visit</button>
-        </div>
-      </div>
+      <ToolCard v-for="tool in toolsData" :tool="tool" />
     </div>
     <button class="section-tools__more">Load more</button>
   </section>
@@ -43,7 +17,7 @@
 <script setup lang="ts">
 /* eslint-disable no-undef */
 import { reactive } from "vue";
-import IconComponent from "@/utils/IconComponent.vue";
+import ToolCard from "@/utils/ToolCard.vue";
 
 interface ITool {
   name: string;
@@ -147,135 +121,6 @@ const setIsLiked = (index: number) => {
     grid-gap: rem(24);
     grid-template-columns: repeat(3, minmax(0, rem(392)));
     width: 100%;
-
-    #{$section-tools}__card {
-      display: flex;
-      flex-direction: column;
-      background: transparent;
-      opacity: 0.5;
-      @include transition();
-      position: relative;
-      justify-content: space-between;
-      padding: rem(30);
-      border-radius: rem(15);
-      gap: rem(30);
-
-      &::after {
-        position: absolute;
-        z-index: -1;
-        padding: rem(1);
-        background: transparent;
-        border-radius: rem(15);
-        content: "";
-      }
-
-      &::before {
-        position: absolute;
-        z-index: -1;
-        padding: rem(1);
-        background: transparent;
-        border-radius: rem(15);
-        content: "";
-      }
-
-      &:hover {
-        opacity: 1;
-        transition: background 0ms;
-        background: rgba(40, 48, 54, 0.5);
-
-        &::before {
-          background: linear-gradient(
-              145deg,
-              $white-tp-2 0,
-              rgba(40, 48, 54, 0.5) 20%
-            ),
-            radial-gradient(
-              circle farthest-side at 90% 10%,
-              $orange-main,
-              rgba(40, 48, 54, 0.1) 25%
-            );
-          inset: 0;
-          -webkit-mask: linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor;
-        }
-
-        &::after {
-          inset: 0;
-          background: radial-gradient(
-            circle farthest-side at 90% 10%,
-            rgba(255, 109, 46, 0.2),
-            rgba(40, 48, 54, 0.1) 25%
-          );
-        }
-      }
-
-      &_header {
-        position: relative;
-        display: flex;
-        gap: rem(30);
-
-        img {
-          max-width: rem(64);
-          max-height: rem(64);
-        }
-
-        p {
-          font-size: rem(24);
-          font-weight: 500;
-          line-height: rem(36);
-          span {
-            color: $orange-main;
-            font-size: rem(18);
-            font-weight: 300;
-            line-height: rem(27);
-          }
-        }
-      }
-
-      &_main {
-        p {
-          font-size: rem(16);
-          font-weight: 300;
-          line-height: rem(30);
-        }
-      }
-
-      &_footer {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        user-select: none;
-
-        &-icons {
-          display: flex;
-          gap: rem(12);
-
-          svg {
-            padding: rem(8);
-            cursor: pointer;
-
-            &:hover {
-              box-shadow: 0 5px 10px -3px rgba(18, 18, 18, 0.15);
-              background: #283036;
-              border-radius: 8px;
-            }
-          }
-        }
-
-        button {
-          width: rem(130);
-          height: rem(48);
-          background: $orange-main;
-          border-radius: rem(8);
-          cursor: pointer;
-          @include transition();
-          &:hover {
-            background: $orange-main-700;
-          }
-        }
-      }
-    }
   }
 
   &__more {

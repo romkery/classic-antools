@@ -19,7 +19,6 @@ export default {
 
   computed: {
     dynamicComponent() {
-      console.log(name);
       return defineAsyncComponent(() =>
         this.folder
           ? import(`@/components/icons/${this.folder}/${this.name}.vue`)
