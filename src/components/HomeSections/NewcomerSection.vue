@@ -6,7 +6,9 @@
         Wow! see the latest update of the most recommended tools from reliable
         designers and developers
       </p>
-      <button>Explore more</button>
+      <BaseButton :style="{ width: '12.5rem', height: '3rem' }"
+        >Explore more</BaseButton
+      >
     </div>
     <div class="section-newcomer__grid">
       <ToolCard
@@ -22,6 +24,7 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 import ToolCard from "@/utils/ToolCard.vue";
+import BaseButton from "@/utils/BaseButton.vue";
 
 interface ITool {
   name: string;
@@ -92,21 +95,6 @@ const toolsData = reactive<ITool[]>([
       line-height: rem(30);
       color: $white-tp-5;
       padding-bottom: rem(30);
-    }
-
-    button {
-      width: rem(200);
-      height: rem(48);
-      background: $orange-main;
-      border-radius: rem(8);
-      cursor: pointer;
-      @include transition();
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      &:hover {
-        background: $orange-main-700;
-      }
     }
   }
   &__grid {

@@ -12,7 +12,10 @@
       <div class="section-hero__main_search">
         <SearchIcon />
         <input type="text" placeholder="find more than 430+ tools..." />
-        <button>Search</button>
+        <BaseButton
+          :style="{ marginRight: '.5rem', width: '12.5rem', height: '3rem' }"
+          >Search
+        </BaseButton>
       </div>
       <div class="section-hero__main_socials">
         <a :href="social.slice(0, -4)" v-for="social in socials" :key="social">
@@ -27,6 +30,7 @@
 <script setup>
 import SearchIcon from "@/components/icons/SearchIcon";
 import Icon from "@/utils/IconComponent";
+import BaseButton from "@/utils/BaseButton";
 
 const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
 </script>
@@ -80,22 +84,22 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
     }
     &_search {
       $search: &;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: rem(500);
       height: rem(64);
       background: $background-main;
       border-radius: rem(15);
-      display: flex;
-      position: relative;
-      align-items: center;
-      justify-content: center;
 
       input {
         flex-grow: 1;
-        height: 100%;
         width: 100%;
-        border-radius: rem(15);
+        height: 100%;
         padding-left: rem(50);
         border: rem(1) solid transparent;
+        border-radius: rem(15);
 
         &:focus {
           border: rem(1) solid $orange-main;
@@ -105,20 +109,6 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
       svg {
         position: absolute;
         left: rem(11);
-      }
-
-      button {
-        right: rem(11);
-        position: absolute;
-        width: rem(130);
-        height: rem(48);
-        background: $orange-main;
-        border-radius: rem(8);
-        cursor: pointer;
-        @include transition();
-        &:hover {
-          background: $orange-main-700;
-        }
       }
     }
 

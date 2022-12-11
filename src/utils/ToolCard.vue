@@ -19,7 +19,7 @@
         />
         <IconComponent name="FolderIcon" />
       </div>
-      <BaseButton width="6.6rem" height="2.6rem">
+      <BaseButton :style="{ width: '6.6rem', height: '2.6rem' }">
         <a :href="tool.link">Visit</a>
       </BaseButton>
     </div>

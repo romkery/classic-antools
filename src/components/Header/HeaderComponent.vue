@@ -24,12 +24,9 @@
         <button aria-label="login button" class="header__authorization_login">
           Login
         </button>
-        <button
-          aria-label="register button"
-          class="header__authorization_register"
-        >
-          Sign Up
-        </button>
+        <BaseButton :style="{ width: '7.5rem', height: '3rem' }"
+          >Sign Up
+        </BaseButton>
       </div>
     </div>
   </header>
@@ -38,6 +35,7 @@
 <script setup>
 import LogoIcon from "@/components/icons/LogoIcon";
 import ArrowIcon from "@/components/icons/ArrowIcon";
+import BaseButton from "@/utils/BaseButton";
 </script>
 
 <style lang="scss" scoped>

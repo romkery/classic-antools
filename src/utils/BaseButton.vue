@@ -1,25 +1,18 @@
 <template>
-  <button class="base-button" :style="{ width: width, height: height }">
+  <button class="base-button">
     <slot />
   </button>
 </template>
 
-<script setup lang="ts">
-interface IProps {
-  width: string;
-  height: string;
-}
-
-const { width, height } = defineProps<IProps>();
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 @use "../assets/scss/util" as *;
 @use "../assets/scss/globals" as *;
 
 .base-button {
-  width: rem(50);
-  height: rem(10);
+  width: rem(100);
+  height: rem(36);
   background: $orange-main;
   border-radius: rem(8);
   cursor: pointer;
