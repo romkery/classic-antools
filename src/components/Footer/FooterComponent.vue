@@ -2,28 +2,30 @@
   <footer class="footer">
     <div class="footer__info">
       <BaseLogo />
-      <BaseTextCard
+      <FooterTextCard
         :title-text="textCardData[0].title"
         :sub-text="textCardData[0].sub"
         :sub-size="textCardData[0].subSize"
         :title-size="textCardData[0].titleSize"
-      />
+        ><h3>{{ textCardData[0].title }}</h3></FooterTextCard
+      >
     </div>
     <div class="footer__links">
-      <BaseTextCard
+      <FooterTextCard
         :title-text="card.title"
         :sub-text="card.sub"
         :sub-size="card.subSize"
         :title-size="card.titleSize"
         v-for="(card, index) in textCardData.slice(1)"
         :key="index"
-      />
+        ><h3>{{ card.title }}</h3></FooterTextCard
+      >
     </div>
   </footer>
 </template>
 
 <script setup>
-import BaseTextCard from "@/utils/BaseTextCard";
+import FooterTextCard from "@/utils/FooterTextCard";
 import BaseLogo from "@/utils/BaseLogo";
 
 const textCardData = [
@@ -61,26 +63,26 @@ const textCardData = [
 @use "../../assets/scss/globals" as *;
 
 .footer {
-  width: 100%;
-  height: rem(350);
   display: flex;
   flex-wrap: wrap;
-  gap: rem(155);
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: rem(350);
   border-top: rem(0.5) solid $white-tp-2;
+  gap: rem(155);
 
   &__info {
-    width: rem(260);
     display: flex;
     flex-direction: column;
+    width: rem(260);
     gap: rem(25);
   }
 
   &__links {
     display: flex;
-    gap: rem(115);
     flex-wrap: wrap;
+    gap: rem(115);
   }
 }
 </style>

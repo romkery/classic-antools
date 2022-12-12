@@ -16,17 +16,17 @@
       />
       <div class="section-hero__main_socials">
         <a :href="social.slice(0, -4)" v-for="social in socials" :key="social">
-          <Icon :name="social" />
+          <IconComponent :name="social" folder="socials" />
         </a>
       </div>
     </div>
-    <Icon name="HeroIcon" class="section-hero__img" />
+    <IconComponent name="HeroIcon" class="section-hero__img" />
   </section>
 </template>
 
 <script setup>
-import Icon from "@/utils/IconComponent";
 import BaseInput from "@/utils/BaseInput";
+import IconComponent from "@/utils/IconComponent";
 
 const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
 </script>
@@ -39,8 +39,12 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: rem(624);
-  max-width: rem(1224);
+  width: 100%;
+
+  @include breakpoint-down(sm) {
+    text-align: center;
+    margin-top: rem(50);
+  }
 
   &::before {
     position: absolute;
@@ -48,10 +52,9 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
     left: rem(-110);
     z-index: -1;
     width: rem(1324);
-    height: rem(702);
+    height: rem(700);
     background-color: hsl(207, 8%, 27%);
     content: "";
-    overflow: auto;
   }
 
   &__main {
@@ -60,6 +63,10 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
     width: 100%;
     padding-top: rem(105);
     gap: rem(30);
+
+    @include breakpoint-down(sm) {
+      align-items: center;
+    }
 
     &_tagline {
       margin: 0;
@@ -95,6 +102,11 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
         height: rem(58);
         background-color: $background-main;
         border-radius: rem(8);
+
+        @include breakpoint-down(sm) {
+          text-align: center;
+          background: $white-tp-1;
+        }
       }
     }
   }
@@ -105,6 +117,16 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
     z-index: -1;
     width: rem(1323);
     height: rem(910);
+
+    @include breakpoint-down(lg) {
+      width: rem(824);
+      height: rem(780);
+    }
+
+    @include breakpoint-down(md) {
+      width: rem(724);
+      height: rem(568);
+    }
   }
 }
 </style>

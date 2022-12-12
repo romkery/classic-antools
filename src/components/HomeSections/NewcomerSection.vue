@@ -72,8 +72,8 @@ const toolsData = reactive<ITool[]>([
 
 .section-newcomer {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
 
   &__info {
     display: flex;
@@ -82,18 +82,18 @@ const toolsData = reactive<ITool[]>([
     gap: rem(30);
 
     h2 {
-      font-weight: 500;
-      font-size: rem(48);
-      line-height: rem(62);
-      color: $white-tp-9;
       margin: 0;
+      color: $white-tp-9;
+      font-size: rem(48);
+      font-weight: 500;
+      line-height: rem(62);
     }
 
     p {
+      padding-bottom: rem(30);
+      color: $white-tp-5;
       font-size: rem(18);
       line-height: rem(30);
-      color: $white-tp-5;
-      padding-bottom: rem(30);
     }
   }
   &__grid {

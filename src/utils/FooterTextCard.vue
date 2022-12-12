@@ -1,6 +1,6 @@
 <template>
   <div class="text-card">
-    <h1 :style="{ fontSize: titleSize }">{{ titleText }}</h1>
+    <h3 :style="{ fontSize: titleSize }">{{ titleText }}</h3>
     <div class="text-card__links" v-if="typeof subText !== 'string'">
       <p
         :style="{ fontSize: subSize }"
@@ -32,20 +32,20 @@ defineProps<IProps>();
 
 .text-card {
   display: flex;
-  gap: rem(20);
   flex-direction: column;
+  gap: rem(20);
 
-  h1 {
+  h3 {
     margin: 0;
-    font-weight: 500;
-    font-size: rem(20);
-    line-height: rem(30);
     color: $white-tp-9;
+    font-size: rem(20);
+    font-weight: 500;
+    line-height: rem(30);
   }
 
   p {
-    line-height: rem(24);
     color: $white-tp-5;
+    line-height: rem(24);
   }
 
   &__links {

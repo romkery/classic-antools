@@ -76,6 +76,10 @@ import BaseLogo from "@/utils/BaseLogo";
       align-items: center;
       gap: rem(30);
 
+      @include breakpoint-down(lg) {
+        display: none;
+      }
+
       &_item {
         display: flex;
         align-items: center;
@@ -107,6 +111,10 @@ import BaseLogo from "@/utils/BaseLogo";
       align-items: center;
       font-weight: 600;
       gap: rem(30);
+
+      @include breakpoint-down(sm) {
+        display: none;
+      }
 
       &_login {
         width: rem(120);
