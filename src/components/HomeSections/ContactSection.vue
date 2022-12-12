@@ -1,5 +1,5 @@
 <template>
-  <section id="brands" class="section-contact">
+  <section id="contacts" class="section-contact">
     <div class="section-contact__text">
       <h2>Become a contributor?</h2>
       <p>
@@ -28,8 +28,7 @@ import BaseInput from "@/utils/BaseInput";
   align-items: center;
   flex-direction: column;
   gap: rem(100);
-  padding-bottom: rem(240);
-  padding-top: rem(40);
+  padding: rem(240) 0;
 
   &__text {
     text-align: center;

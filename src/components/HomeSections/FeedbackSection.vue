@@ -1,5 +1,5 @@
 <template>
-  <section id="feedback" class="section-feedback">
+  <section id="feedback" class="section-feedback mt-200">
     <div class="section-feedback__main">
       <FeedBackSectionInfo
         :tabs="tabs"
@@ -95,7 +95,7 @@ const feedBackData = [
 ];
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../../assets/scss/util" as *;
 @use "../../assets/scss/globals" as *;
 

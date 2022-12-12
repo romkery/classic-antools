@@ -44,7 +44,6 @@ const props = defineProps<IProps>();
 
 @keyframes slide-right {
   0% {
-    background: rgba(255, 255, 255, 0.1);
     margin-right: rem(500);
   }
   100% {
@@ -53,7 +52,6 @@ const props = defineProps<IProps>();
 }
 @keyframes slide-left {
   0% {
-    background: rgba(255, 255, 255, 0.1);
     margin-left: rem(500);
   }
   100% {

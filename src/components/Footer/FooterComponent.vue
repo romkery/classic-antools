@@ -36,24 +36,21 @@ const textCardData = [
   {
     title: "Contact Us",
     sub: [
-      '<a href="/section-hero">+621987463</a>',
-      '<a href="/section-hero">M Building, No.10 A</a>',
-      '<a href="/section-hero">antools@awesome.com </a>',
+      '<a href="#contacts">+621987463</a>',
+      '<a href="#contacts">M Building, No.10 A</a>',
+      '<a href="#contacts">antools@awesome.com </a>',
     ],
   },
   {
     title: "Categories",
-    sub: [
-      '<a href="/section-hero">Design</a>',
-      '<a href="/section-hero">Development</a>',
-    ],
+    sub: ['<a href="#hero">Design</a>', '<a href="#hero">Development</a>'],
   },
   {
     title: "Company Info",
     sub: [
-      '<a href="/section-hero">About us</a>',
-      '<a href="/section-hero">Our Partners</a>',
-      '<a href="/section-hero">Blog</a>',
+      '<a href="#tools">About us</a>',
+      '<a href="#newcomer">Our Partners</a>',
+      '<a href="#feedback">Blog</a>',
     ],
   },
 ];

@@ -1,5 +1,5 @@
 <template>
-  <section id="newcomer" class="section-newcomer">
+  <section id="newcomer" class="section-newcomer mt-200">
     <div class="section-newcomer__info">
       <h2>Newcomer tools</h2>
       <p>
