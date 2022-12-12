@@ -48,7 +48,7 @@ const props = defineProps<IProps>();
 
   input {
     width: 100%;
-    padding: rem(20) 0;
+    padding: rem(23) 0;
   }
 
   svg {

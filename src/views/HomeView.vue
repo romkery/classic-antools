@@ -5,6 +5,7 @@
     <BrandsSection />
     <NewcomerSection />
     <FeedbackSection />
+    <ContactSection />
   </main>
 </template>
 
@@ -28,4 +29,5 @@ import ToolsSection from "@/components/HomeSections/ToolsSection";
 import BrandsSection from "@/components/HomeSections/BrandsSection";
 import NewcomerSection from "@/components/HomeSections/NewcomerSection";
 import FeedbackSection from "@/components/HomeSections/FeedbackSection";
+import ContactSection from "@/components/HomeSections/ContactSection";
 </script>
