@@ -71,7 +71,7 @@ const feedBackData = [
     profession: "Co-Founder of Apple",
     quote:
       "The people who are crazy enough to think they can change the world are the ones who do.",
-    img: "steve",
+    img: "https://i.pinimg.com/originals/82/fa/a5/82faa5402427a532870587bc57e6e9b0.png",
     id: 0,
   },
   {
@@ -79,7 +79,7 @@ const feedBackData = [
     profession: "Product Manager",
     quote:
       "Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.",
-    img: "human",
+    img: "https://i.pinimg.com/originals/d2/90/da/d290da47968433eb1d56962c7cec67b2.png",
     id: 1,
   },
   {
@@ -87,7 +87,7 @@ const feedBackData = [
     profession: "Owner of Telegram",
     quote:
       "Privacy is not for sale, and human rights should not be compromised out of fear or greed.",
-    img: "pavel",
+    img: "https://i.pinimg.com/originals/71/a9/a9/71a9a968cbad40fe506448848d2433d1.png",
     id: 2,
   },
 ];
