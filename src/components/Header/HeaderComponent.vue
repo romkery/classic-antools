@@ -1,10 +1,7 @@
 <template>
   <header class="header">
     <div class="container">
-      <div class="header__logo">
-        <LogoIcon role="button" tabindex="1" />
-        <span>antools.</span>
-      </div>
+      <BaseLogo role="button" tabindex="1" />
       <nav class="header__nav">
         <div class="header__nav_item">
           <a href="/home">Home</a>
@@ -33,9 +30,9 @@
 </template>
 
 <script setup>
-import LogoIcon from "@/components/icons/LogoIcon";
 import ArrowIcon from "@/components/icons/ArrowIcon";
 import BaseButton from "@/utils/BaseButton";
+import BaseLogo from "@/utils/BaseLogo";
 </script>
 
 <style lang="scss" scoped>
