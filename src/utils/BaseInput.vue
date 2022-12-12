@@ -1,6 +1,6 @@
 <template>
   <div class="base-input">
-    <IconComponent :name="icon" :folder="iconFolder ?? ''" />
+    <IconComponent v-if="icon" :name="icon" :folder="iconFolder ?? ''" />
     <input
       type="text"
       :placeholder="placeholder ?? 'find more than 430+ tools...'"
@@ -22,7 +22,7 @@ interface IProps {
   placeholder: string;
 }
 
-const props = defineProps<IProps>();
+defineProps<IProps>();
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterView, useRouter } from "vue-router";
-import Header from "@/components/Header/HeaderComponent.vue";
+import HeaderComponent from "@/components/Header/HeaderComponent.vue";
+import FooterComponent from "@/components/Footer/FooterComponent.vue";
 import { onMounted } from "vue";
 
 const router = useRouter();
@@ -12,8 +13,9 @@ onMounted(() => {
 
 <template>
   <div class="App">
-    <Header />
+    <HeaderComponent />
     <RouterView />
+    <FooterComponent />
   </div>
 </template>
 
