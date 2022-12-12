@@ -40,6 +40,10 @@ defineProps<IProps>();
   padding: rem(0) rem(11) rem(0) rem(18);
   gap: rem(14);
 
+  @include breakpoint-down(sm) {
+    background: $white-tp-1;
+  }
+
   &:focus-within,
   &:hover {
     @include transition();

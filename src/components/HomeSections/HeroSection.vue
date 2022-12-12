@@ -55,6 +55,11 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
     height: rem(700);
     background-color: hsl(207, 8%, 27%);
     content: "";
+
+    @include breakpoint-down(md) {
+      width: calc(100% + rem(40));
+      left: rem(-20);
+    }
   }
 
   &__main {

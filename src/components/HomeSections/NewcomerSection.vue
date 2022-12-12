@@ -75,11 +75,27 @@ const toolsData = reactive<ITool[]>([
   justify-content: space-between;
   width: 100%;
 
+  @include breakpoint-down(lg) {
+    flex-direction: column;
+    gap: rem(40);
+  }
+  @include breakpoint-down(md) {
+    align-items: center;
+    text-align: center;
+  }
+  @include breakpoint-down(sm) {
+    padding-top: rem(100);
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
     max-width: rem(420);
     gap: rem(30);
+
+    @include breakpoint-down(md) {
+      align-items: center;
+    }
 
     h2 {
       margin: 0;
@@ -100,6 +116,17 @@ const toolsData = reactive<ITool[]>([
     display: grid;
     grid-gap: rem(24);
     grid-template-columns: repeat(2, minmax(0, rem(285)));
+
+    @include breakpoint-down(lg) {
+      align-self: end;
+    }
+    @include breakpoint-down(md) {
+      align-self: center;
+    }
+    @include breakpoint-down(sm) {
+      grid-template-columns: repeat(1, minmax(0, rem(355)));
+      align-self: center;
+    }
   }
 }
 </style>
