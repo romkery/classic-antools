@@ -6,7 +6,10 @@
     v-show="props.tabs[human.id].isShow"
     :key="human.id"
   >
-    <div class="info__human" :style="{ backgroundImage: `url(${human.img})` }">
+    <div
+      class="info__human"
+      :style="{ backgroundImage: `url(src/assets/img/${human.img}.png)` }"
+    >
       <div class="info__human_name">
         <p>
           {{ human.name }}
