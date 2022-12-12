@@ -1,6 +1,7 @@
 <template>
   <div
     class="info"
+    id="feedback-info"
     v-for="human in props.feedBackData"
     v-show="props.tabs[human.id].isShow"
     :key="human.id"
@@ -32,6 +33,7 @@ interface IProps {
     img: string;
     id: number;
   };
+  isLeftSide: boolean;
 }
 const props = defineProps<IProps>();
 </script>
@@ -40,12 +42,39 @@ const props = defineProps<IProps>();
 @use "../../assets/scss/util" as *;
 @use "../../assets/scss/globals" as *;
 
+@keyframes slide-right {
+  0% {
+    background: rgba(255, 255, 255, 0.1);
+    margin-right: rem(500);
+  }
+  100% {
+    margin-right: rem(0);
+  }
+}
+@keyframes slide-left {
+  0% {
+    background: rgba(255, 255, 255, 0.1);
+    margin-left: rem(500);
+  }
+  100% {
+    margin-left: rem(0);
+  }
+}
+
+.animation-left {
+  animation: 450ms slide-right ease-in-out;
+}
+.animation-right {
+  animation: 450ms slide-left ease-in-out;
+}
+
 .info {
   display: flex;
   width: 100%;
   gap: rem(60);
   align-items: center;
   justify-content: center;
+  border-radius: rem(25);
 
   &__human {
     width: rem(400);
@@ -76,6 +105,7 @@ const props = defineProps<IProps>();
       backdrop-filter: blur(25px);
       border-radius: rem(8);
       padding: rem(10) rem(22) rem(16) rem(22);
+      opacity: 0.99;
 
       &::before {
         background: linear-gradient(

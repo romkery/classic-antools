@@ -1,7 +1,11 @@
 <template>
   <section id="feedback" class="section-feedback">
     <div class="section-feedback__main">
-      <FeedBackSectionInfo :tabs="tabs" :feedBackData="feedBackData" />
+      <FeedBackSectionInfo
+        :tabs="tabs"
+        :feedBackData="feedBackData"
+        :isLeftSide="isLeftSide"
+      />
       <div class="navigation">
         <span
           v-for="(tab, index) in tabs"
@@ -22,21 +26,34 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import IconComponent from "@/utils/IconComponent.vue";
 import FeedBackSectionInfo from "@/components/HomeSections/FeedBackSectionInfo.vue";
+
+let isLeftSide = ref(false);
 
 const slide = (direction: number) => {
   let active = tabs.findIndex((tab) => tab.isShow);
   tabs.forEach((tab) => (tab.isShow = !1));
+  const infoCards = document.querySelectorAll("#feedback-info");
+  console.log(infoCards);
 
   if (!direction) {
+    for (let card of infoCards) {
+      console.log(card);
+      card.classList.remove("animation-right");
+      card.classList.add("animation-left");
+    }
     if (active === 0) {
       active = 3;
     }
     tabs[active - 1].isShow = !0;
   }
   if (direction) {
+    for (let card of infoCards) {
+      card.classList.remove("animation-left");
+      card.classList.add("animation-right");
+    }
     if (active === 2) {
       active = -1;
     }
