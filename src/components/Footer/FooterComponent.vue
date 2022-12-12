@@ -64,25 +64,44 @@ const textCardData = [
 
 .footer {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: rem(350);
+  min-height: rem(350);
   border-top: rem(0.5) solid $white-tp-2;
   gap: rem(155);
+
+  @include breakpoint-down(sm) {
+    flex-direction: column;
+    gap: rem(50);
+  }
+
+  @include breakpoint-down(md) {
+    width: 100%;
+    padding: rem(40) 0;
+  }
 
   &__info {
     display: flex;
     flex-direction: column;
     width: rem(260);
     gap: rem(25);
+
+    @include breakpoint-down(md) {
+      width: rem(170);
+    }
   }
 
   &__links {
     display: flex;
-    flex-wrap: wrap;
     gap: rem(115);
+
+    @include breakpoint-down(md) {
+      flex-direction: column;
+    }
+
+    @include breakpoint-down(lg) {
+      gap: rem(50);
+    }
   }
 }
 </style>
