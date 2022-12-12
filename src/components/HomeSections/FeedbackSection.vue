@@ -157,6 +157,7 @@ const feedBackData = [
         width: rem(44);
         height: rem(6);
         background: #283036;
+        border-radius: rem(4);
       }
     }
   }

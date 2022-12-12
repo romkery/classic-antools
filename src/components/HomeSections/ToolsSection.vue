@@ -8,14 +8,13 @@
       </p>
     </div>
     <div class="section-tools__grid">
-      <ToolCard v-for="tool in toolsData" :tool="tool" />
+      <ToolCard v-for="(tool, index) in toolsData" :tool="tool" :key="index" />
     </div>
     <button class="section-tools__more">Load more</button>
   </section>
 </template>
 
 <script setup lang="ts">
-/* eslint-disable no-undef */
 import { reactive } from "vue";
 import ToolCard from "@/utils/ToolCard.vue";
 
@@ -23,7 +22,6 @@ interface ITool {
   name: string;
   license: string;
   description: string;
-  img: string;
   isLiked: boolean;
   link: string;
 }
@@ -33,7 +31,6 @@ const toolsData = reactive<ITool[]>([
     name: "FIGMA",
     license: "Free",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: require("@/assets/img/popular-tools/figma.png"),
     isLiked: false,
     link: "https://www.figma.com/",
   },
@@ -41,7 +38,6 @@ const toolsData = reactive<ITool[]>([
     name: "Sketch",
     license: "Trial & Paid",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: require("@/assets/img/popular-tools/sketch.png"),
     isLiked: true,
     link: "https://www.sketch.com/",
   },
@@ -49,7 +45,6 @@ const toolsData = reactive<ITool[]>([
     name: "Visual Studio Code",
     license: "Free",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: require("@/assets/img/popular-tools/vscode.png"),
     isLiked: false,
     link: "https://code.visualstudio.com/",
   },
@@ -57,7 +52,6 @@ const toolsData = reactive<ITool[]>([
     name: "Notion",
     license: "Free & Paid",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: require("@/assets/img/popular-tools/notion.png"),
     isLiked: false,
     link: "https://www.notion.so/",
   },
@@ -65,7 +59,6 @@ const toolsData = reactive<ITool[]>([
     name: "Slack",
     license: "Free & Paid",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: require("@/assets/img/popular-tools/slack.png"),
     isLiked: false,
     link: "https://slack.com/",
   },
@@ -73,15 +66,10 @@ const toolsData = reactive<ITool[]>([
     name: "Invision",
     license: "Trial & Paid",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: require("@/assets/img/popular-tools/invision.png"),
     isLiked: false,
     link: "https://www.invisionapp.com/",
   },
 ]);
-
-const setIsLiked = (index: number) => {
-  toolsData[index].isLiked = !toolsData[index].isLiked;
-};
 </script>
 
 <style scoped lang="scss">
