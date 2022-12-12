@@ -27,13 +27,17 @@ const brands = ["Microsoft", "Google", "Slack", "WordPress"];
 @use "../../assets/scss/globals" as *;
 
 .section-brands {
+  @include breakpoint-down(sm) {
+    padding-top: rem(100);
+    text-align: center;
+  }
+
   &__content {
     position: relative;
     bottom: rem(10);
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding: rem(55) rem(85);
     background: rgba(44, 53, 61, 0.2);
     border-radius: rem(25);
@@ -83,8 +87,19 @@ const brands = ["Microsoft", "Google", "Slack", "WordPress"];
     &_companies {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       width: 100%;
       height: 100%;
+
+      @include breakpoint-down(sm) {
+        flex-direction: column;
+        gap: rem(20);
+      }
+
+      svg {
+        @include breakpoint-down(sm) {
+        }
+      }
     }
   }
 }
