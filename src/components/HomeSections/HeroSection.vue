@@ -9,14 +9,11 @@
         Antool is a web collection of information on paid or <br />
         free Design and Development tools
       </p>
-      <div class="section-hero__main_search">
-        <SearchIcon />
-        <input type="text" placeholder="find more than 430+ tools..." />
-        <BaseButton
-          :style="{ marginRight: '.5rem', width: '12.5rem', height: '3rem' }"
-          >Search
-        </BaseButton>
-      </div>
+      <BaseInput
+        button-text="Search"
+        placeholder="find more than 430+ tools..."
+        icon="SearchIcon"
+      />
       <div class="section-hero__main_socials">
         <a :href="social.slice(0, -4)" v-for="social in socials" :key="social">
           <Icon :name="social" />
@@ -28,9 +25,8 @@
 </template>
 
 <script setup>
-import SearchIcon from "@/components/icons/SearchIcon";
 import Icon from "@/utils/IconComponent";
-import BaseButton from "@/utils/BaseButton";
+import BaseInput from "@/utils/BaseInput";
 
 const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
 </script>
@@ -81,35 +77,6 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
       font-size: rem(18);
       font-weight: 400;
       line-height: rem(30);
-    }
-    &_search {
-      $search: &;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: rem(500);
-      height: rem(64);
-      background: $background-main;
-      border-radius: rem(15);
-
-      input {
-        flex-grow: 1;
-        width: 100%;
-        height: 100%;
-        padding-left: rem(50);
-        border: rem(1) solid transparent;
-        border-radius: rem(15);
-
-        &:focus {
-          border: rem(1) solid $orange-main;
-        }
-      }
-
-      svg {
-        position: absolute;
-        left: rem(11);
-      }
     }
 
     &_socials {
