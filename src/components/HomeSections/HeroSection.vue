@@ -56,7 +56,7 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
     background-color: hsl(207, 8%, 27%);
     content: "";
 
-    @include breakpoint-down(md) {
+    @include breakpoint-down(lg) {
       width: calc(100% + rem(40));
       left: rem(-20);
     }
