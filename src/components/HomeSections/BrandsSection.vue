@@ -1,5 +1,5 @@
 <template>
-  <section id="brands" class="section-brands mt-200">
+  <section id="brands" class="section-brands pt-200">
     <div class="section-brands__content">
       <h3 class="section-brands__content_title">
         Trusted more than 150+ brand

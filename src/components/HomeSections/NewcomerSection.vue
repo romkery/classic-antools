@@ -1,5 +1,5 @@
 <template>
-  <section id="newcomer" class="section-newcomer mt-200">
+  <section id="newcomer" class="section-newcomer pt-200">
     <div class="section-newcomer__info">
       <h2>Newcomer tools</h2>
       <p>
@@ -7,8 +7,8 @@
         designers and developers
       </p>
       <BaseButton :style="{ width: '12.5rem', height: '3rem' }"
-        >Explore more</BaseButton
-      >
+        >Explore more
+      </BaseButton>
     </div>
     <div class="section-newcomer__grid">
       <ToolCard
@@ -112,6 +112,7 @@ const toolsData = reactive<ITool[]>([
       line-height: rem(30);
     }
   }
+
   &__grid {
     display: grid;
     grid-gap: rem(24);
@@ -124,8 +125,8 @@ const toolsData = reactive<ITool[]>([
       align-self: center;
     }
     @include breakpoint-down(sm) {
-      grid-template-columns: repeat(1, minmax(0, rem(355)));
       align-self: center;
+      grid-template-columns: repeat(1, minmax(0, rem(355)));
     }
   }
 }

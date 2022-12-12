@@ -1,5 +1,5 @@
 <template>
-  <section id="feedback" class="section-feedback mt-200">
+  <section id="feedback" class="section-feedback pt-200">
     <div class="section-feedback__main">
       <FeedBackSectionInfo
         :tabs="tabs"
@@ -101,26 +101,29 @@ const feedBackData = [
 
 .section-feedback {
   width: 100%;
+  @include breakpoint-down(sm) {
+    padding-top: rem(100) !important;
+  }
 
   &__main {
+    position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     gap: rem(100);
-    position: relative;
-    align-items: center;
 
     .controls {
       position: absolute;
-      height: 100%;
-      width: 100%;
-      cursor: pointer;
       display: flex;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
 
       &_left,
       &_right {
-        align-items: center;
         display: flex;
+        align-items: center;
         width: 50%;
         height: 100%;
 
@@ -132,8 +135,8 @@ const feedBackData = [
 
         svg {
           @include transition();
-          transform: rotate(180deg);
           color: $white-tp-3;
+          transform: rotate(180deg);
         }
       }
 

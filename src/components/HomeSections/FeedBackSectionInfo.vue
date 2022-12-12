@@ -74,6 +74,10 @@ const props = defineProps<IProps>();
   justify-content: center;
   border-radius: rem(25);
 
+  @include breakpoint-down(sm) {
+    flex-direction: column;
+  }
+
   &__human {
     width: rem(400);
     height: rem(500);
@@ -85,6 +89,11 @@ const props = defineProps<IProps>();
     align-items: end;
     justify-content: end;
     position: relative;
+
+    @include breakpoint-down(sm) {
+      width: rem(300);
+      height: rem(350);
+    }
 
     &::after {
       position: absolute;
@@ -103,7 +112,6 @@ const props = defineProps<IProps>();
       backdrop-filter: blur(25px);
       border-radius: rem(8);
       padding: rem(10) rem(22) rem(16) rem(22);
-      opacity: 0.99;
 
       &::before {
         background: linear-gradient(
@@ -140,6 +148,10 @@ const props = defineProps<IProps>();
 
   &__description {
     width: rem(410);
+
+    @include breakpoint-down(sm) {
+      width: 100%;
+    }
 
     p {
       font-weight: 300;

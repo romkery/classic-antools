@@ -1,5 +1,5 @@
 <template>
-  <section id="tools" class="section-tools mt-200">
+  <section id="tools" class="section-tools pt-200">
     <div class="section-tools__title">
       <h2>Most Popular Tools</h2>
       <p>
