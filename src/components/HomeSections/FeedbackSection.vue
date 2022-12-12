@@ -36,11 +36,9 @@ const slide = (direction: number) => {
   let active = tabs.findIndex((tab) => tab.isShow);
   tabs.forEach((tab) => (tab.isShow = !1));
   const infoCards = document.querySelectorAll("#feedback-info");
-  console.log(infoCards);
 
   if (!direction) {
     for (let card of infoCards) {
-      console.log(card);
       card.classList.remove("animation-right");
       card.classList.add("animation-left");
     }
@@ -73,7 +71,7 @@ const feedBackData = [
     profession: "Co-Founder of Apple",
     quote:
       "The people who are crazy enough to think they can change the world are the ones who do.",
-    img: "/src/assets/img/steve.png",
+    img: "./src/assets/img/steve.png",
     id: 0,
   },
   {
@@ -81,7 +79,7 @@ const feedBackData = [
     profession: "Product Manager",
     quote:
       "Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.",
-    img: "/src/assets/img/human.png",
+    img: "./src/assets/img/human.png",
     id: 1,
   },
   {
@@ -89,7 +87,7 @@ const feedBackData = [
     profession: "Owner of Telegram",
     quote:
       "Privacy is not for sale, and human rights should not be compromised out of fear or greed.",
-    img: "/src/assets/img/pavel.png",
+    img: "./src/assets/img/pavel.png",
     id: 2,
   },
 ];
