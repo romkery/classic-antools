@@ -25,7 +25,6 @@ const brands = ["Microsoft", "Google", "Slack", "WordPress"];
 .section-brands {
   display: flex;
   flex-direction: column;
-  margin-top: rem(200);
   bottom: rem(10);
   background: rgba(44, 53, 61, 0.2);
   border-radius: rem(25);

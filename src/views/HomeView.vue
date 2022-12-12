@@ -4,6 +4,7 @@
     <ToolsSection />
     <BrandsSection />
     <NewcomerSection />
+    <FeedbackSection />
   </main>
 </template>
 
@@ -12,6 +13,9 @@
 @use "../assets/scss/globals" as *;
 
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: rem(200);
   max-width: rem(1225);
   width: 100%;
   margin: 0 auto;
@@ -23,4 +27,5 @@ import HeroSection from "@/components/HomeSections/HeroSection.vue";
 import ToolsSection from "@/components/HomeSections/ToolsSection";
 import BrandsSection from "@/components/HomeSections/BrandsSection";
 import NewcomerSection from "@/components/HomeSections/NewcomerSection";
+import FeedbackSection from "@/components/HomeSections/FeedbackSection";
 </script>

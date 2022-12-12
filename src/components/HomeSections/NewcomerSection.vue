@@ -73,7 +73,6 @@ const toolsData = reactive<ITool[]>([
 .section-newcomer {
   display: flex;
   width: 100%;
-  margin-top: rem(200);
   justify-content: space-between;
 
   &__info {
