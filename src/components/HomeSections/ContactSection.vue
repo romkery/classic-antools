@@ -30,6 +30,10 @@ import BaseInput from "@/utils/BaseInput";
   padding: rem(240) 0;
   gap: rem(100);
 
+  @include breakpoint-down(sm) {
+    padding: rem(100) 0;
+  }
+
   &__text {
     max-width: rem(550);
     text-align: center;
