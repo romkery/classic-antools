@@ -113,11 +113,12 @@ const props = defineProps<IProps>();
       margin-bottom: rem(30);
       background: rgba(40, 48, 54, 0.2);
       border-radius: rem(8);
-      -webkit-backdrop-filter: blur(25px);
-      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(rem(25));
+      backdrop-filter: blur(rem(25));
 
       @supports not (
-        (backdrop-filter: blur(25px)) or (-webkit-backdrop-filter: blur(25px))
+        (backdrop-filter: blur(rem(25))) or
+          (-webkit-backdrop-filter: blur(rem(25)))
       ) {
         background: $background-main-tp-8;
       }

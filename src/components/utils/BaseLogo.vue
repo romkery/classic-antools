@@ -22,6 +22,8 @@ import IconComponent from "@/components/utils/IconComponent";
   gap: rem(12);
 
   svg {
+    width: rem(38);
+    height: rem(38);
     cursor: pointer;
   }
 }

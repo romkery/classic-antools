@@ -82,7 +82,6 @@ const toolsData = reactive<ITool[]>([
   }
   @include breakpoint-down(md) {
     align-items: center;
-    text-align: center;
   }
   @include breakpoint-down(sm) {
     padding-top: rem(100);

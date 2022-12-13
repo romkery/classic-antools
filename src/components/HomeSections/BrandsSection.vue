@@ -91,16 +91,17 @@ const brands = ["Microsoft", "Google", "Slack", "WordPress"];
       align-items: center;
       width: 100%;
       height: 100%;
+      gap: rem(20);
+
+      svg {
+        width: rem(195);
+        height: rem(50);
+      }
 
       @include breakpoint-down(sm) {
         flex-direction: column;
         -ms-flex-direction: column;
-        gap: rem(20);
-      }
-
-      svg {
-        @include breakpoint-down(sm) {
-        }
+        gap: rem(40);
       }
     }
   }
