@@ -44,14 +44,14 @@ interface IProps {
 }
 
 const props = defineProps<IProps>();
-const tool = props.tool;
 
 const getIconName = (): string => {
-  return tool.name.split(" ").join("") + "Icon";
+  return props.tool.name.split(" ").join("") + "Icon";
 };
 
 const setIsLiked = () => {
-  tool.isLiked = !props.tool.isLiked;
+  // eslint-disable-next-line vue/no-mutating-props
+  props.tool.isLiked = !props.tool.isLiked;
 };
 </script>
 
