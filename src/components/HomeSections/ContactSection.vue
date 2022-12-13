@@ -25,6 +25,7 @@ import BaseInput from "@/components/utils/BaseInput";
 .section-contact {
   display: flex;
   flex-direction: column;
+  -ms-flex-direction: column;
   align-items: center;
   width: 100%;
   padding: rem(240) 0;

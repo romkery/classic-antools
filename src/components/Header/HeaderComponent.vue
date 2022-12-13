@@ -46,7 +46,14 @@ import BaseLogo from "@/components/utils/BaseLogo";
   display: flex;
   justify-content: center;
   width: 100%;
+  -webkit-backdrop-filter: blur(25px);
   backdrop-filter: blur(25px);
+  @supports not (
+    (backdrop-filter: blur(25px)) or (-webkit-backdrop-filter: blur(25px))
+  ) {
+    background: $background-main-tp-8;
+  }
+
   z-index: 9999;
 
   .container {

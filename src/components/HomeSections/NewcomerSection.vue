@@ -77,6 +77,7 @@ const toolsData = reactive<ITool[]>([
 
   @include breakpoint-down(lg) {
     flex-direction: column;
+    -ms-flex-direction: column;
     gap: rem(40);
   }
   @include breakpoint-down(md) {
@@ -91,6 +92,7 @@ const toolsData = reactive<ITool[]>([
     display: flex;
     flex-direction: column;
     max-width: rem(420);
+    -ms-flex-direction: column;
     gap: rem(30);
 
     @include breakpoint-down(md) {
@@ -114,6 +116,7 @@ const toolsData = reactive<ITool[]>([
   }
 
   &__grid {
+    display: -ms-grid;
     display: grid;
     grid-gap: rem(24);
     grid-template-columns: repeat(2, minmax(0, rem(285)));

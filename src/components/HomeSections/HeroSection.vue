@@ -15,7 +15,12 @@
         icon="SearchIcon"
       />
       <div class="section-hero__main_socials">
-        <a :href="social.slice(0, -4)" v-for="social in socials" :key="social">
+        <a
+          :href="'#' + social.slice(0, -4).toLowerCase()"
+          v-for="social in socials"
+          :key="social"
+          title="social-icon"
+        >
           <IconComponent :name="social" folder="socials" />
         </a>
       </div>
@@ -65,6 +70,7 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
   &__main {
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     width: 100%;
     padding-top: rem(105);
     gap: rem(30);

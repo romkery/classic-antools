@@ -14,8 +14,6 @@
       <FooterTextCard
         :title-text="card.title"
         :sub-text="card.sub"
-        :sub-size="card.subSize"
-        :title-size="card.titleSize"
         v-for="(card, index) in textCardData.slice(1)"
         :key="index"
         ><h3>{{ card.title }}</h3></FooterTextCard
@@ -72,6 +70,7 @@ const textCardData = [
 
   @include breakpoint-down(sm) {
     flex-direction: column;
+    -ms-flex-direction: column;
     gap: rem(50);
   }
 
@@ -83,6 +82,7 @@ const textCardData = [
   &__info {
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     width: rem(260);
     gap: rem(25);
 
@@ -97,6 +97,7 @@ const textCardData = [
 
     @include breakpoint-down(md) {
       flex-direction: column;
+      -ms-flex-direction: column;
     }
 
     @include breakpoint-down(lg) {

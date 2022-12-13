@@ -107,6 +107,7 @@ const feedBackData = [
     position: relative;
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     align-items: center;
     width: 100%;
     gap: rem(100);

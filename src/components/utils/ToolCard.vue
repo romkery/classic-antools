@@ -62,6 +62,7 @@ const setIsLiked = () => {
 .card {
   display: flex;
   flex-direction: column;
+  -ms-flex-direction: column;
   background: transparent;
   opacity: 0.5;
   @include transition();
@@ -157,7 +158,6 @@ const setIsLiked = () => {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    user-select: none;
 
     &-icons {
       display: flex;

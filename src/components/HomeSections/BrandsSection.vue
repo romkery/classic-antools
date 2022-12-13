@@ -37,6 +37,7 @@ const brands = ["Microsoft", "Google", "Slack", "WordPress"];
     bottom: rem(10);
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     align-items: center;
     padding: rem(55) rem(85);
     background: rgba(44, 53, 61, 0.2);
@@ -93,6 +94,7 @@ const brands = ["Microsoft", "Google", "Slack", "WordPress"];
 
       @include breakpoint-down(sm) {
         flex-direction: column;
+        -ms-flex-direction: column;
         gap: rem(20);
       }
 

@@ -17,8 +17,8 @@
 interface IProps {
   titleSize?: string;
   titleLine?: string;
-  titleText: string;
-  subText: string;
+  titleText: any;
+  subText: any;
   subSize?: string;
   subLine?: string;
 }
@@ -33,6 +33,7 @@ defineProps<IProps>();
 .text-card {
   display: flex;
   flex-direction: column;
+  -ms-flex-direction: column;
   gap: rem(20);
 
   h3 {
@@ -51,6 +52,7 @@ defineProps<IProps>();
   &__links {
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     gap: rem(10);
   }
 }
