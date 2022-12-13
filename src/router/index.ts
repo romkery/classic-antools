@@ -19,15 +19,18 @@ const router = createRouter({
     },
     {
       path: "/categories",
-      redirect: "/",
+      name: "categories",
+      component: HomeView,
     },
     {
       path: "/collections",
-      redirect: "/",
+      name: "collections",
+      component: HomeView,
     },
     {
       path: "/blog",
-      redirect: "/",
+      name: "blog",
+      component: HomeView,
     },
   ],
 });
