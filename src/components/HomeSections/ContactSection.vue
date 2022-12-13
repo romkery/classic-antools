@@ -27,12 +27,11 @@ import BaseInput from "@/components/utils/BaseInput";
   flex-direction: column;
   -ms-flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: rem(240) 0;
+  padding: rem(240) rem(20);
   gap: rem(100);
 
   @include breakpoint-down(sm) {
-    padding: rem(100) 0;
+    padding: rem(100) rem(20);
   }
 
   &__text {
