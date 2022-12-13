@@ -16,6 +16,7 @@
         :sub-text="card.sub"
         v-for="(card, index) in textCardData.slice(1)"
         :key="index"
+        @click="setScrollBehavior"
         ><h3>{{ card.title }}</h3></FooterTextCard
       >
     </div>
@@ -25,6 +26,14 @@
 <script setup>
 import FooterTextCard from "@/components/utils/FooterTextCard";
 import BaseLogo from "@/components/utils/BaseLogo";
+
+const setScrollBehavior = () => {
+  document.documentElement.style.scrollBehavior = "smooth";
+  setTimeout(
+    () => (document.documentElement.style.scrollBehavior = "auto"),
+    100
+  );
+};
 
 const textCardData = [
   {
