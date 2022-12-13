@@ -25,8 +25,8 @@
 </template>
 
 <script setup>
-import BaseInput from "@/utils/BaseInput";
-import IconComponent from "@/utils/IconComponent";
+import BaseInput from "@/components/utils/BaseInput";
+import IconComponent from "@/components/utils/IconComponent";
 
 const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
 </script>

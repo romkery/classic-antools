@@ -25,8 +25,8 @@
 </template>
 
 <script setup>
-import FooterTextCard from "@/utils/FooterTextCard";
-import BaseLogo from "@/utils/BaseLogo";
+import FooterTextCard from "@/components/utils/FooterTextCard";
+import BaseLogo from "@/components/utils/BaseLogo";
 
 const textCardData = [
   {

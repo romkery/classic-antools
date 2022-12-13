@@ -27,8 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import IconComponent from "@/utils/IconComponent.vue";
-import BaseButton from "@/utils/BaseButton.vue";
+import IconComponent from "@/components/utils/IconComponent.vue";
+import BaseButton from "@/components/utils/BaseButton.vue";
 
 interface ITool {
   name: string;
@@ -56,8 +56,8 @@ const setIsLiked = () => {
 </script>
 
 <style lang="scss" scoped>
-@use "../assets/scss/util" as *;
-@use "../assets/scss/globals" as *;
+@use "../../assets/scss/util/index" as *;
+@use "../../assets/scss/globals/index" as *;
 
 .card {
   display: flex;

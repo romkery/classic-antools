@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseInput from "@/utils/BaseInput";
+import BaseInput from "@/components/utils/BaseInput";
 </script>
 
 <style scoped lang="scss">

@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import BaseButton from "@/utils/BaseButton";
-import IconComponent from "@/utils/IconComponent.vue";
+import BaseButton from "@/components/utils/BaseButton.vue";
+import IconComponent from "@/components/utils/IconComponent.vue";
 
 interface IProps {
   icon?: string;
@@ -26,8 +26,8 @@ defineProps<IProps>();
 </script>
 
 <style lang="scss" scoped>
-@use "../assets/scss/util" as *;
-@use "../assets/scss/globals" as *;
+@use "../../assets/scss/util/index" as *;
+@use "../../assets/scss/globals/index" as *;
 
 .base-input {
   display: flex;

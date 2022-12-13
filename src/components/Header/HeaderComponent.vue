@@ -31,8 +31,8 @@
 
 <script setup>
 import ArrowIcon from "@/components/icons/ArrowIcon";
-import BaseButton from "@/utils/BaseButton";
-import BaseLogo from "@/utils/BaseLogo";
+import BaseButton from "@/components/utils/BaseButton";
+import BaseLogo from "@/components/utils/BaseLogo";
 </script>
 
 <style lang="scss" scoped>

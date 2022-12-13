@@ -27,7 +27,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
-import IconComponent from "@/utils/IconComponent.vue";
+import IconComponent from "@/components/utils/IconComponent.vue";
 import FeedBackSectionInfo from "@/components/HomeSections/FeedBackSectionInfo.vue";
 
 let isLeftSide = ref(false);

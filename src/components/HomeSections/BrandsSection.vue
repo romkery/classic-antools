@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import IconComponent from "@/utils/IconComponent";
+import IconComponent from "@/components/utils/IconComponent";
 
 const brands = ["Microsoft", "Google", "Slack", "WordPress"];
 </script>

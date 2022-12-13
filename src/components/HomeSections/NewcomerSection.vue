@@ -23,8 +23,8 @@
 
 <script setup lang="ts">
 import { reactive } from "vue";
-import ToolCard from "@/utils/ToolCard.vue";
-import BaseButton from "@/utils/BaseButton.vue";
+import ToolCard from "@/components/utils/ToolCard.vue";
+import BaseButton from "@/components/utils/BaseButton.vue";
 
 interface ITool {
   name: string;

@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import { reactive } from "vue";
-import ToolCard from "@/utils/ToolCard.vue";
+import ToolCard from "@/components/utils/ToolCard.vue";
 
 interface ITool {
   name: string;

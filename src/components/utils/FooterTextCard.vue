@@ -27,8 +27,8 @@ defineProps<IProps>();
 </script>
 
 <style lang="scss" scoped>
-@use "../assets/scss/util" as *;
-@use "../assets/scss/globals" as *;
+@use "../../assets/scss/util/index" as *;
+@use "../../assets/scss/globals/index" as *;
 
 .text-card {
   display: flex;

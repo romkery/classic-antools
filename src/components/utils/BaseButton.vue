@@ -7,8 +7,8 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-@use "../assets/scss/util" as *;
-@use "../assets/scss/globals" as *;
+@use "../../assets/scss/util/index" as *;
+@use "../../assets/scss/globals/index" as *;
 
 .base-button {
   width: rem(100);
