@@ -11,8 +11,11 @@ const router = createRouter({
     },
     {
       path: "/home",
-      name: "home",
-      component: HomeView,
+      redirect: "/",
+    },
+    {
+      path: "/home#*",
+      redirect: "/",
     },
   ],
 });
