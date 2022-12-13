@@ -1,5 +1,5 @@
 <template>
-  <section id="tools" class="section-tools mt-200">
+  <section id="tools" class="section-tools pt-200">
     <div class="section-tools__title">
       <h2>Most Popular Tools</h2>
       <p>
@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import { reactive } from "vue";
-import ToolCard from "@/utils/ToolCard.vue";
+import ToolCard from "@/components/utils/ToolCard.vue";
 
 interface ITool {
   name: string;
@@ -80,9 +80,15 @@ const toolsData = reactive<ITool[]>([
   $section-tools: &;
   display: flex;
   flex-direction: column;
+  -ms-flex-direction: column;
   align-items: center;
   width: 100%;
   gap: rem(100);
+
+  @include breakpoint-down(sm) {
+    text-align: center;
+    padding-top: rem(100);
+  }
 
   &__title {
     h2 {
@@ -104,11 +110,20 @@ const toolsData = reactive<ITool[]>([
   }
 
   &__grid {
+    display: -ms-grid;
     display: grid;
     justify-content: center;
     grid-gap: rem(24);
     grid-template-columns: repeat(3, minmax(0, rem(392)));
+
     width: 100%;
+
+    @include breakpoint-down(md) {
+      grid-template-columns: repeat(2, minmax(0, rem(392)));
+    }
+    @include breakpoint-down(sm) {
+      grid-template-columns: repeat(1, minmax(0, rem(392)));
+    }
   }
 
   &__more {

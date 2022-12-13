@@ -1,11 +1,13 @@
 <template>
-  <main class="container">
-    <HeroSection />
-    <ToolsSection />
-    <BrandsSection />
-    <NewcomerSection />
-    <FeedbackSection />
-    <ContactSection />
+  <main>
+    <div class="container">
+      <HeroSection />
+      <ToolsSection />
+      <BrandsSection />
+      <NewcomerSection />
+      <FeedbackSection />
+      <ContactSection />
+    </div>
   </main>
 </template>
 
@@ -13,13 +15,15 @@
 @use "../assets/scss/util" as *;
 @use "../assets/scss/globals" as *;
 
-.container {
-  display: flex;
-  flex-direction: column;
-  max-width: rem(1225);
-  width: 100%;
-  margin: 0 auto;
+main {
   height: 100%;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  max-width: rem(1225);
+  padding: 0 rem(20);
+  margin: 0 auto;
 }
 </style>
 <script setup>

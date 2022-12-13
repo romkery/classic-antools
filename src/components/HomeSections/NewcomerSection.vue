@@ -1,5 +1,5 @@
 <template>
-  <section id="newcomer" class="section-newcomer mt-200">
+  <section id="newcomer" class="section-newcomer pt-200">
     <div class="section-newcomer__info">
       <h2>Newcomer tools</h2>
       <p>
@@ -7,8 +7,8 @@
         designers and developers
       </p>
       <BaseButton :style="{ width: '12.5rem', height: '3rem' }"
-        >Explore more</BaseButton
-      >
+        >Explore more
+      </BaseButton>
     </div>
     <div class="section-newcomer__grid">
       <ToolCard
@@ -23,8 +23,8 @@
 
 <script setup lang="ts">
 import { reactive } from "vue";
-import ToolCard from "@/utils/ToolCard.vue";
-import BaseButton from "@/utils/BaseButton.vue";
+import ToolCard from "@/components/utils/ToolCard.vue";
+import BaseButton from "@/components/utils/BaseButton.vue";
 
 interface ITool {
   name: string;
@@ -72,34 +72,65 @@ const toolsData = reactive<ITool[]>([
 
 .section-newcomer {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
+
+  @include breakpoint-down(lg) {
+    flex-direction: column;
+    -ms-flex-direction: column;
+    gap: rem(40);
+  }
+  @include breakpoint-down(md) {
+    align-items: center;
+    text-align: center;
+  }
+  @include breakpoint-down(sm) {
+    padding-top: rem(100);
+  }
 
   &__info {
     display: flex;
     flex-direction: column;
     max-width: rem(420);
+    -ms-flex-direction: column;
     gap: rem(30);
 
+    @include breakpoint-down(md) {
+      align-items: center;
+    }
+
     h2 {
-      font-weight: 500;
-      font-size: rem(48);
-      line-height: rem(62);
-      color: $white-tp-9;
       margin: 0;
+      color: $white-tp-9;
+      font-size: rem(48);
+      font-weight: 500;
+      line-height: rem(62);
     }
 
     p {
+      padding-bottom: rem(30);
+      color: $white-tp-5;
       font-size: rem(18);
       line-height: rem(30);
-      color: $white-tp-5;
-      padding-bottom: rem(30);
     }
   }
+
   &__grid {
+    display: -ms-grid;
     display: grid;
     grid-gap: rem(24);
     grid-template-columns: repeat(2, minmax(0, rem(285)));
+
+    @include breakpoint-down(lg) {
+      align-self: end;
+    }
+    @include breakpoint-down(md) {
+      align-self: center;
+    }
+    @include breakpoint-down(sm) {
+      align-self: center;
+      grid-template-columns: repeat(1, minmax(0, rem(355)));
+    }
   }
 }
 </style>

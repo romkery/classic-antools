@@ -4,17 +4,17 @@
       <BaseLogo role="button" tabindex="1" />
       <nav class="header__nav">
         <div class="header__nav_item">
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
         </div>
         <div class="header__nav_item">
-          <a href="/categories">Categories</a>
+          <a href="/">Categories</a>
           <ArrowIcon />
         </div>
         <div class="header__nav_item">
-          <a href="/collections">My Collections</a>
+          <a href="/">My Collections</a>
         </div>
         <div class="header__nav_item">
-          <a href="/blog">Blog</a>
+          <a href="/">Blog</a>
         </div>
       </nav>
       <div class="header__authorization">
@@ -31,8 +31,8 @@
 
 <script setup>
 import ArrowIcon from "@/components/icons/ArrowIcon";
-import BaseButton from "@/utils/BaseButton";
-import BaseLogo from "@/utils/BaseLogo";
+import BaseButton from "@/components/utils/BaseButton";
+import BaseLogo from "@/components/utils/BaseLogo";
 </script>
 
 <style lang="scss" scoped>
@@ -46,7 +46,14 @@ import BaseLogo from "@/utils/BaseLogo";
   display: flex;
   justify-content: center;
   width: 100%;
+  -webkit-backdrop-filter: blur(25px);
   backdrop-filter: blur(25px);
+  @supports not (
+    (backdrop-filter: blur(25px)) or (-webkit-backdrop-filter: blur(25px))
+  ) {
+    background: $background-main-tp-8;
+  }
+
   z-index: 9999;
 
   .container {
@@ -75,6 +82,10 @@ import BaseLogo from "@/utils/BaseLogo";
       justify-content: space-between;
       align-items: center;
       gap: rem(30);
+
+      @include breakpoint-down(lg) {
+        display: none;
+      }
 
       &_item {
         display: flex;
@@ -107,6 +118,10 @@ import BaseLogo from "@/utils/BaseLogo";
       align-items: center;
       font-weight: 600;
       gap: rem(30);
+
+      @include breakpoint-down(sm) {
+        display: none;
+      }
 
       &_login {
         width: rem(120);

@@ -27,8 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import IconComponent from "@/utils/IconComponent.vue";
-import BaseButton from "@/utils/BaseButton.vue";
+import IconComponent from "@/components/utils/IconComponent.vue";
+import BaseButton from "@/components/utils/BaseButton.vue";
 
 interface ITool {
   name: string;
@@ -44,24 +44,25 @@ interface IProps {
 }
 
 const props = defineProps<IProps>();
-const tool = props.tool;
 
 const getIconName = (): string => {
-  return tool.name.split(" ").join("") + "Icon";
+  return props.tool.name.split(" ").join("") + "Icon";
 };
 
 const setIsLiked = () => {
-  tool.isLiked = !props.tool.isLiked;
+  // eslint-disable-next-line vue/no-mutating-props
+  props.tool.isLiked = !props.tool.isLiked;
 };
 </script>
 
 <style lang="scss" scoped>
-@use "../assets/scss/util" as *;
-@use "../assets/scss/globals" as *;
+@use "../../assets/scss/util/index" as *;
+@use "../../assets/scss/globals/index" as *;
 
 .card {
   display: flex;
   flex-direction: column;
+  -ms-flex-direction: column;
   background: transparent;
   opacity: 0.5;
   @include transition();
@@ -157,7 +158,6 @@ const setIsLiked = () => {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    user-select: none;
 
     &-icons {
       display: flex;

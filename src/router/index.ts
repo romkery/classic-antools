@@ -11,7 +11,25 @@ const router = createRouter({
     },
     {
       path: "/home",
-      name: "home",
+      redirect: "/",
+    },
+    {
+      path: "/home#*",
+      redirect: "/",
+    },
+    {
+      path: "/categories",
+      name: "categories",
+      component: HomeView,
+    },
+    {
+      path: "/collections",
+      name: "collections",
+      component: HomeView,
+    },
+    {
+      path: "/blog",
+      name: "blog",
       component: HomeView,
     },
   ],

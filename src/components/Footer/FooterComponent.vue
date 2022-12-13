@@ -2,29 +2,38 @@
   <footer class="footer">
     <div class="footer__info">
       <BaseLogo />
-      <BaseTextCard
+      <FooterTextCard
         :title-text="textCardData[0].title"
         :sub-text="textCardData[0].sub"
         :sub-size="textCardData[0].subSize"
         :title-size="textCardData[0].titleSize"
-      />
+        ><h3>{{ textCardData[0].title }}</h3></FooterTextCard
+      >
     </div>
     <div class="footer__links">
-      <BaseTextCard
+      <FooterTextCard
         :title-text="card.title"
         :sub-text="card.sub"
-        :sub-size="card.subSize"
-        :title-size="card.titleSize"
         v-for="(card, index) in textCardData.slice(1)"
         :key="index"
-      />
+        @click="setScrollBehavior"
+        ><h3>{{ card.title }}</h3></FooterTextCard
+      >
     </div>
   </footer>
 </template>
 
 <script setup>
-import BaseTextCard from "@/utils/BaseTextCard";
-import BaseLogo from "@/utils/BaseLogo";
+import FooterTextCard from "@/components/utils/FooterTextCard";
+import BaseLogo from "@/components/utils/BaseLogo";
+
+const setScrollBehavior = () => {
+  document.documentElement.style.scrollBehavior = "smooth";
+  setTimeout(
+    () => (document.documentElement.style.scrollBehavior = "auto"),
+    100
+  );
+};
 
 const textCardData = [
   {
@@ -61,26 +70,48 @@ const textCardData = [
 @use "../../assets/scss/globals" as *;
 
 .footer {
-  width: 100%;
-  height: rem(350);
   display: flex;
-  flex-wrap: wrap;
-  gap: rem(155);
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: rem(350);
   border-top: rem(0.5) solid $white-tp-2;
+  gap: rem(155);
+
+  @include breakpoint-down(sm) {
+    flex-direction: column;
+    -ms-flex-direction: column;
+    gap: rem(50);
+  }
+
+  @include breakpoint-down(md) {
+    width: 100%;
+    padding: rem(40) 0;
+  }
 
   &__info {
-    width: rem(260);
     display: flex;
     flex-direction: column;
+    -ms-flex-direction: column;
+    width: rem(260);
     gap: rem(25);
+
+    @include breakpoint-down(md) {
+      width: rem(170);
+    }
   }
 
   &__links {
     display: flex;
     gap: rem(115);
-    flex-wrap: wrap;
+
+    @include breakpoint-down(md) {
+      flex-direction: column;
+      -ms-flex-direction: column;
+    }
+
+    @include breakpoint-down(lg) {
+      gap: rem(50);
+    }
   }
 }
 </style>

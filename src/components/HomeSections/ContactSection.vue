@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseInput from "@/utils/BaseInput";
+import BaseInput from "@/components/utils/BaseInput";
 </script>
 
 <style scoped lang="scss">
@@ -23,28 +23,33 @@ import BaseInput from "@/utils/BaseInput";
 @use "../../assets/scss/globals" as *;
 
 .section-contact {
-  width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  gap: rem(100);
+  -ms-flex-direction: column;
+  align-items: center;
+  width: 100%;
   padding: rem(240) 0;
+  gap: rem(100);
+
+  @include breakpoint-down(sm) {
+    padding: rem(100) 0;
+  }
 
   &__text {
-    text-align: center;
     max-width: rem(550);
+    text-align: center;
 
     h2 {
-      font-weight: 500;
-      font-size: rem(48);
-      line-height: rem(62);
       color: $white-tp-9;
+      font-size: rem(48);
+      font-weight: 500;
+      line-height: rem(62);
     }
     p {
+      padding: 0 rem(62);
+      color: $white-tp-5;
       font-size: rem(18);
       line-height: rem(30);
-      color: $white-tp-5;
-      padding: 0 rem(62);
     }
   }
 }

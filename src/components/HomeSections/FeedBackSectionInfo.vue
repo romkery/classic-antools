@@ -1,7 +1,7 @@
 <template>
   <div
     class="info"
-    id="feedback-info"
+    :id="`feedback-info-${human.name}`"
     v-for="human in props.feedBackData"
     v-show="props.tabs[human.id].isShow"
     :key="human.id"
@@ -68,42 +68,59 @@ const props = defineProps<IProps>();
 
 .info {
   display: flex;
-  width: 100%;
-  gap: rem(60);
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
   border-radius: rem(25);
+  gap: rem(60);
+
+  @include breakpoint-down(sm) {
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
 
   &__human {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: end;
     width: rem(400);
     height: rem(500);
     background-image: url("../../assets/img/human.png");
-    background-size: contain;
-    background-repeat: no-repeat;
     background-position: center;
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include breakpoint-down(sm) {
+      width: rem(300);
+      height: rem(350);
+    }
 
     &::after {
       position: absolute;
-      content: "";
+      right: rem(10);
+      bottom: rem(35);
+      z-index: -1;
       width: rem(30);
       height: rem(30);
       background: #007acc;
-      bottom: rem(30);
-      right: rem(10);
-      z-index: -1;
+      content: "";
     }
 
     &_name {
+      position: relative;
+      padding: rem(10) rem(22) rem(16) rem(22);
       margin-bottom: rem(30);
       background: rgba(40, 48, 54, 0.2);
-      backdrop-filter: blur(25px);
       border-radius: rem(8);
-      padding: rem(10) rem(22) rem(16) rem(22);
-      opacity: 0.99;
+      -webkit-backdrop-filter: blur(25px);
+      backdrop-filter: blur(25px);
+
+      @supports not (
+        (backdrop-filter: blur(25px)) or (-webkit-backdrop-filter: blur(25px))
+      ) {
+        background: $background-main-tp-8;
+      }
 
       &::before {
         background: linear-gradient(
@@ -115,24 +132,24 @@ const props = defineProps<IProps>();
         -webkit-mask: linear-gradient(#ffffff 0 0) content-box,
           linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
-        content: "";
         position: absolute;
         z-index: -1;
         padding: rem(1);
         border-radius: rem(8);
+        content: "";
       }
 
       p {
+        color: $white-tp-8;
         font-size: rem(26);
         line-height: rem(30);
         letter-spacing: 0.015em;
-        color: $white-tp-8;
 
         span {
-          font-weight: 300;
-          font-size: rem(16);
-          line-height: rem(24);
           color: $white-tp-5;
+          font-size: rem(16);
+          font-weight: 300;
+          line-height: rem(24);
         }
       }
     }
@@ -141,34 +158,38 @@ const props = defineProps<IProps>();
   &__description {
     width: rem(410);
 
+    @include breakpoint-down(sm) {
+      width: 100%;
+    }
+
     p {
-      font-weight: 300;
+      position: relative;
+      color: rgba(255, 255, 255, 0.78);
       font-size: rem(14);
+      font-weight: 300;
       line-height: rem(30);
       letter-spacing: 0.015em;
-      color: rgba(255, 255, 255, 0.78);
-      position: relative;
 
       &::before {
-        font-family: "Lora", serif;
-        content: "‘‘";
         position: absolute;
-        display: inline-block;
-        font-size: rem(250);
-        letter-spacing: -0.06em;
-        line-height: 1;
-        left: rem(-80);
         top: rem(-80);
+        left: rem(-80);
+        display: inline-block;
 
         background: linear-gradient(
           188.88deg,
           rgba(252, 252, 252, 0.01) 20.34%,
           rgba(255, 255, 255, 0.5) 155.72%
         );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-family: "Lora", serif;
+        font-size: rem(250);
+        line-height: 1;
+        letter-spacing: -0.06em;
 
         transform: rotate(19.17deg);
+        content: "‘‘";
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
   }
