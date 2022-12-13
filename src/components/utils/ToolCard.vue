@@ -62,9 +62,9 @@ const setIsLiked = () => {
 .card {
   display: flex;
   flex-direction: column;
-  -ms-flex-direction: column;
   background: transparent;
   opacity: 0.5;
+  -ms-flex-direction: column;
   @include transition();
   position: relative;
   justify-content: space-between;
@@ -126,8 +126,9 @@ const setIsLiked = () => {
     position: relative;
     display: flex;
     gap: rem(30);
+    align-items: center;
 
-    img {
+    svg {
       max-width: rem(64);
       max-height: rem(64);
     }
@@ -136,6 +137,7 @@ const setIsLiked = () => {
       font-size: rem(24);
       font-weight: 500;
       line-height: rem(36);
+
       span {
         color: $orange-main;
         font-size: rem(18);
@@ -161,7 +163,7 @@ const setIsLiked = () => {
 
     &-icons {
       display: flex;
-      gap: rem(12);
+      margin-right: rem(12);
 
       svg {
         padding: rem(8);

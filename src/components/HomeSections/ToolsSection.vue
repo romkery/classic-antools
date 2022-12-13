@@ -86,7 +86,6 @@ const toolsData = reactive<ITool[]>([
   gap: rem(100);
 
   @include breakpoint-down(sm) {
-    text-align: center;
     padding-top: rem(100);
   }
 
@@ -115,7 +114,6 @@ const toolsData = reactive<ITool[]>([
     justify-content: center;
     grid-gap: rem(24);
     grid-template-columns: repeat(3, minmax(0, rem(392)));
-
     width: 100%;
 
     @include breakpoint-down(md) {

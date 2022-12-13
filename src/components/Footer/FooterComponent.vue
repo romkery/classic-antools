@@ -1,24 +1,26 @@
 <template>
-  <footer class="footer">
-    <div class="footer__info">
-      <BaseLogo />
-      <FooterTextCard
-        :title-text="textCardData[0].title"
-        :sub-text="textCardData[0].sub"
-        :sub-size="textCardData[0].subSize"
-        :title-size="textCardData[0].titleSize"
-        ><h3>{{ textCardData[0].title }}</h3></FooterTextCard
-      >
-    </div>
-    <div class="footer__links">
-      <FooterTextCard
-        :title-text="card.title"
-        :sub-text="card.sub"
-        v-for="(card, index) in textCardData.slice(1)"
-        :key="index"
-        @click="setScrollBehavior"
-        ><h3>{{ card.title }}</h3></FooterTextCard
-      >
+  <footer>
+    <div class="footer">
+      <div class="footer__info">
+        <BaseLogo />
+        <FooterTextCard
+          :title-text="textCardData[0].title"
+          :sub-text="textCardData[0].sub"
+          :sub-size="textCardData[0].subSize"
+          :title-size="textCardData[0].titleSize"
+          ><h3>{{ textCardData[0].title }}</h3></FooterTextCard
+        >
+      </div>
+      <div class="footer__links">
+        <FooterTextCard
+          :title-text="card.title"
+          :sub-text="card.sub"
+          v-for="(card, index) in textCardData.slice(1)"
+          :key="index"
+          @click="setScrollBehavior"
+          ><h3>{{ card.title }}</h3></FooterTextCard
+        >
+      </div>
     </div>
   </footer>
 </template>
@@ -69,48 +71,62 @@ const textCardData = [
 @use "../../assets/scss/util" as *;
 @use "../../assets/scss/globals" as *;
 
-.footer {
+footer {
+  height: 100%;
+  max-width: rem(1225);
+  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: rem(350);
-  border-top: rem(0.5) solid $white-tp-2;
-  gap: rem(155);
+  margin: 0 auto;
 
-  @include breakpoint-down(sm) {
-    flex-direction: column;
-    -ms-flex-direction: column;
-    gap: rem(50);
-  }
-
-  @include breakpoint-down(md) {
+  .footer {
     width: 100%;
-    padding: rem(40) 0;
-  }
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: rem(350);
+    border-top: rem(0.5) solid $white-tp-2;
+    gap: rem(155);
+    padding: 0 rem(20);
 
-  &__info {
-    display: flex;
-    flex-direction: column;
-    -ms-flex-direction: column;
-    width: rem(260);
-    gap: rem(25);
-
-    @include breakpoint-down(md) {
-      width: rem(170);
-    }
-  }
-
-  &__links {
-    display: flex;
-    gap: rem(115);
-
-    @include breakpoint-down(md) {
+    @include breakpoint-down(sm) {
       flex-direction: column;
       -ms-flex-direction: column;
+      gap: rem(50);
     }
 
+    @include breakpoint-down(xl) {
+      gap: rem(55);
+    }
     @include breakpoint-down(lg) {
-      gap: rem(50);
+      gap: rem(20);
+      padding: rem(40) rem(20);
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      -ms-flex-direction: column;
+      width: rem(260);
+      gap: rem(25);
+
+      @include breakpoint-down(md) {
+        width: rem(170);
+      }
+    }
+
+    &__links {
+      display: flex;
+      gap: rem(115);
+
+      @include breakpoint-down(md) {
+        flex-direction: column;
+        -ms-flex-direction: column;
+      }
+
+      @include breakpoint-down(lg) {
+        gap: rem(40);
+      }
     }
   }
 }
