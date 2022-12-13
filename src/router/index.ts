@@ -18,7 +18,15 @@ const router = createRouter({
       redirect: "/",
     },
     {
-      path: "/*",
+      path: "/categories",
+      redirect: "/",
+    },
+    {
+      path: "/collections",
+      redirect: "/",
+    },
+    {
+      path: "/blog",
       redirect: "/",
     },
   ],
