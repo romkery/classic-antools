@@ -53,6 +53,10 @@ defineProps<IProps>();
   input {
     width: 100%;
     padding: rem(23) 0;
+    text-align: left;
+  }
+  input:placeholder-shown {
+    text-overflow: ellipsis;
   }
 
   svg {
