@@ -114,6 +114,11 @@ const socials = ["FacebookIcon", "InstagramIcon", "TwitterIcon"];
         background-color: $background-main;
         border-radius: rem(8);
 
+        svg {
+          width: rem(30);
+          height: rem(30);
+        }
+
         @include breakpoint-down(sm) {
           text-align: center;
           background: $white-tp-1;

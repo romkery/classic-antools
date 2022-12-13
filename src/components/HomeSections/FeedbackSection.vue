@@ -133,6 +133,8 @@ const feedBackData = [
         }
 
         svg {
+          width: rem(12);
+          height: rem(24);
           @include transition();
           color: $white-tp-3;
           transform: rotate(180deg);

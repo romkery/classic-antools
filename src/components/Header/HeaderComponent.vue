@@ -100,10 +100,6 @@ import BaseLogo from "@/components/utils/BaseLogo";
           }
         }
 
-        svg {
-          padding-top: rem(4);
-        }
-
         a {
           @include transition();
           color: $white-tp-5;

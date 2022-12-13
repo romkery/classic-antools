@@ -129,8 +129,8 @@ const setIsLiked = () => {
     align-items: center;
 
     svg {
-      max-width: rem(64);
-      max-height: rem(64);
+      width: rem(64);
+      height: rem(64);
     }
 
     p {
@@ -166,6 +166,8 @@ const setIsLiked = () => {
       margin-right: rem(12);
 
       svg {
+        width: rem(28);
+        height: rem(28);
         padding: rem(8);
         cursor: pointer;
 
